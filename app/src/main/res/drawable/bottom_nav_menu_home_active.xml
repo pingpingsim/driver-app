@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:top="0dp">
+        <bitmap
+            android:gravity="top"
+            android:src="@mipmap/bottom_nav_menu_home_active" />
+    </item>
+
+    <item>
+        <inset android:drawable="@mipmap/bottom_nav_menu_highlight"
+            android:insetRight="10dp"
+            android:insetTop="27dp"
+            android:insetLeft="10dp"
+            android:insetBottom="0dp" />
+    </item>
+
+
+<!--    <item android:bottom="-8dp">-->
+<!--        <bitmap-->
+<!--            android:gravity="bottom"-->
+<!--            android:src="@mipmap/bottom_nav_menu_highlight" />-->
+<!--    </item>-->
+
+</layer-list>

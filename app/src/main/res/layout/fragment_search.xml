@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.profile.ProfileFragment">
+
+        <!-- Tracking Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_tracking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_tracking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/search_tracking" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_tracking">
+
+                <TextView
+                    android:id="@+id/txt_title_tracking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:paddingBottom="@dimen/padding_16dp"
+                    android:text="@string/search_tracking"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/next_arrow"
+                    android:tint="@color/separator_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_title_tracking"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- Guidebook Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_guidebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/search_guide" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_guide">
+
+                <TextView
+                    android:id="@+id/txt_title_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:paddingBottom="@dimen/padding_16dp"
+                    android:text="@string/search_guidebook"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/next_arrow"
+                    android:tint="@color/separator_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_title_guide"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

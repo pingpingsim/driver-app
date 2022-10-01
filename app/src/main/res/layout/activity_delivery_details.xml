@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pickupItem"
+            type="com.pingu.driverapp.data.model.Parcel" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.home.pending.delivery.details.DeliveryDetailsActivity.ClickHandlers" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/panel_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/padding_12dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_ref_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:paddingBottom="@dimen/padding_15dp"
+                android:text="@{pickupItem.parcelId}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_17"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/panel_data"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:background="@color/separator_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:text="@string/delivery_details_address"
+                android:textColor="@color/profile_version_info"
+                android:textSize="@dimen/font_size_12" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:layout_marginBottom="@dimen/padding_15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_12dp"
+                    android:layout_toLeftOf="@+id/icon_map"
+                    android:text="@{pickupItem.recipientAddress}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16" />
+
+                <ImageView
+                    android:id="@+id/icon_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view) -> handler.onMapMenuSelected(view, pickupItem)}"
+                    android:src="@mipmap/icon_map" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/panel_data"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:background="@color/separator_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:text="@string/delivery_details_receiver_name"
+                android:textColor="@color/profile_version_info"
+                android:textSize="@dimen/font_size_12" />
+
+            <TextView
+                android:id="@+id/txt_receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:paddingBottom="@dimen/padding_15dp"
+                android:text="@{pickupItem.recipientName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/panel_data"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:background="@color/separator_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:text="@string/delivery_details_mobile_number"
+                android:textColor="@color/profile_version_info"
+                android:textSize="@dimen/font_size_12" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_20dp"
+                android:paddingRight="@dimen/padding_20dp"
+                android:layout_marginBottom="@dimen/padding_15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_12dp"
+                    android:layout_toLeftOf="@+id/icon_call"
+                    android:text="@{pickupItem.recipientContactNumber}"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16" />
+
+                <ImageView
+                    android:id="@+id/icon_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_5dp"
+                    android:layout_toLeftOf="@+id/icon_whatsapp"
+                    android:onClick="@{(view) -> handler.onCallMenuSelected(view, pickupItem)}"
+                    android:src="@mipmap/icon_call" />
+
+                <ImageView
+                    android:id="@+id/icon_whatsapp"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view) -> handler.onWhatsappMenuSelected(view, pickupItem)}"
+                    android:src="@mipmap/icon_whatsapp" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/panel_data"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:background="@color/separator_bg" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_problematic"
+            android:layout_width="wrap_content"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/panel_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/padding_15dp"
+            android:background="@drawable/red_panel_bg"
+            android:onClick="@{(view) -> handler.onProblematicBtnClick(view, pickupItem)}"
+            android:paddingLeft="@dimen/padding_30dp"
+            android:paddingTop="@dimen/padding_12dp"
+            android:paddingRight="@dimen/padding_30dp"
+            android:paddingBottom="@dimen/padding_12dp"
+            android:stateListAnimator="@null"
+            android:text="@string/delivery_details_problematic"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_15"
+            android:textStyle="bold" />
+
+        <com.ebanx.swipebtn.SwipeButton
+            android:id="@+id/swipe_btn_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/padding_20dp"
+            android:layout_marginEnd="@dimen/padding_20dp"
+            app:button_background="@drawable/slide_panel_btn_bg"
+            app:button_bottom_padding="18dp"
+            app:button_image_disabled="@mipmap/icon_slide"
+            app:button_image_enabled="@mipmap/icon_slide"
+            app:button_left_padding="18dp"
+            app:button_right_padding="18dp"
+            app:button_top_padding="18dp"
+            app:button_trail_drawable="@drawable/login_btn_bg"
+            app:button_trail_enabled="true"
+            app:has_activate_state="false"
+            app:initial_state="disabled"
+            app:inner_text="@string/delivery_details_slide_to_sign"
+            app:inner_text_background="@drawable/slide_panel_inactive_bg"
+            app:inner_text_bottom_padding="18dp"
+            app:inner_text_color="#757575"
+            app:inner_text_size="@dimen/font_size_15"
+            app:inner_text_top_padding="18dp" />
+
+        <!--app:button_trail_drawable="@drawable/shape_button_squared"-->
+
+
+    </RelativeLayout>
+</layout>

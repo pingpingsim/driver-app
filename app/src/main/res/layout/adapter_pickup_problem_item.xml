@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="parcelProblem"
+            type="com.pingu.driverapp.data.model.ParcelProblem" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.home.operation.pickup.pickupproblem.PickupProblemDataAdapter.ClickHandlers" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/panel_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:paddingLeft="@dimen/padding_12dp"
+            android:paddingTop="@dimen/padding_14dp"
+            android:paddingRight="@dimen/padding_12dp"
+            android:paddingBottom="@dimen/padding_14dp">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/padding_20dp"
+                android:button="@drawable/radio_btn_bg"
+                android:tag="@{parcelProblem.id}"
+                android:checked="@{parcelProblem.checked}"
+                android:clickable="true"
+                android:onClick="@{(view) -> handler.onItemSelected(view, parcelProblem, index)}" />
+
+            <TextView
+                android:id="@+id/txt_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/radio_btn"
+                android:gravity="left"
+                android:text="@{parcelProblem.reason}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_15" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/panel_info"
+            android:background="@color/separator_bg" />
+
+    </RelativeLayout>
+</layout>
+
+

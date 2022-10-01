@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="pickupItem"
+            type="com.pingu.driverapp.data.model.Parcel" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.home.operation.pickup.PickupAdapter.ClickHandlers" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/panel_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:layout_weight="0.7"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingBottom="@dimen/padding_15dp">
+
+                <TextView
+                    android:id="@+id/txt_parcel_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="@dimen/padding_8dp"
+                    android:singleLine="true"
+                    android:text="@{pickupItem.parcelId}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <TextView
+                    android:id="@+id/txt_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_parcel_id"
+                    android:singleLine="true"
+                    android:text="@{pickupItem.statusDate}"
+                    android:textColor="@color/profile_version_info"
+                    android:textSize="@dimen/font_size_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="@{(view) -> handler.onRemoveParcel(view, pickupItem)}"
+                    android:padding="@dimen/padding_15dp"
+                    android:src="@mipmap/cancel" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/panel_data"
+            android:layout_marginLeft="@dimen/padding_20dp"
+            android:background="@color/separator_bg" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:top="0.5dp">
+        <bitmap
+            android:gravity="top"
+            android:src="@mipmap/bottom_nav_menu_home_active" />
+
+    </item>
+
+    <item android:bottom="-8dp">
+        <bitmap
+            android:gravity="bottom"
+            android:src="@mipmap/bottom_nav_menu_highlight" />
+    </item>
+
+</layer-list>

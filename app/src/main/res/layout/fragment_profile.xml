@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_bg"
+        android:orientation="vertical"
+        tools:context=".ui.profile.ProfileFragment">
+
+        <!-- Change Password Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_change_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_change_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/profile_change_pwd" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_change_pwd">
+
+                <TextView
+                    android:id="@+id/txt_title_change_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:paddingBottom="@dimen/padding_16dp"
+                    android:text="@string/profile_menu_change_password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/next_arrow"
+                    android:tint="@color/separator_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_title_change_pwd"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- Update Version Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_update_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_update_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/profile_version" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_update_version">
+
+                <TextView
+                    android:id="@+id/txt_title_update_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:text="@string/profile_menu_update_version"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <TextView
+                    android:id="@+id/txt_desc_update_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_title_update_version"
+                    android:layout_marginTop="@dimen/padding_3dp"
+                    android:paddingBottom="@dimen/padding_14dp"
+                    android:text="@string/profile_menu_update_version_up_to_date"
+                    android:textSize="@dimen/font_size_9" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_desc_update_version"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- Update Data Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_update_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_update_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/profile_version"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_update_data">
+
+                <TextView
+                    android:id="@+id/txt_title_update_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:text="@string/profile_menu_update_data"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_14" />
+
+                <TextView
+                    android:id="@+id/txt_desc_update_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_title_update_data"
+                    android:layout_marginTop="@dimen/padding_3dp"
+                    android:paddingBottom="@dimen/padding_14dp"
+                    android:text="@string/profile_menu_update_data_last_sync"
+                    android:textSize="@dimen/font_size_9" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_desc_update_data"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- Logout Menu-->
+        <RelativeLayout
+            android:id="@+id/menu_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/icon_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:src="@mipmap/profile_logout" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_toRightOf="@+id/icon_logout">
+
+                <TextView
+                    android:id="@+id/txt_title_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:paddingBottom="@dimen/padding_16dp"
+                    android:text="@string/profile_menu_logout"
+                    android:textColor="@color/profile_logout_red"
+                    android:textSize="@dimen/font_size_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/next_arrow"
+                    android:tint="@color/separator_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_title_logout"
+                    android:background="@color/separator_bg" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_profile_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/padding_20dp"
+            android:text="@string/profile_app_version_info"
+            android:textColor="@color/profile_version_info"
+            android:textSize="@dimen/font_size_12" />
+
+
+    </LinearLayout>
+</layout>

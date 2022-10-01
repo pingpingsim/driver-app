@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/panel_parcel_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_8dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_20dp"
+            android:paddingTop="@dimen/padding_16dp"
+            android:paddingRight="@dimen/padding_20dp"
+            android:paddingBottom="@dimen/padding_20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_input_layout_problem_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextInputLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_txt_problem_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/dropdown_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/operation_problematic_type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_17" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_input_layout_parcel_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                app:hintTextAppearance="@style/TextInputLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_txt_parcel_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                    android:drawableRight="@mipmap/icon_scan"
+                    android:hint="@string/operation_pickup_hint_parcel_id"
+                    android:inputType="textCapCharacters"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_17" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/panel_parcel_info"
+            android:layout_marginTop="@dimen/padding_8dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/padding_20dp"
+            android:paddingTop="@dimen/padding_12dp"
+            android:paddingRight="@dimen/padding_20dp"
+            android:paddingBottom="@dimen/padding_12dp"
+            android:weightSum="1.0">
+
+            <RelativeLayout
+                android:id="@+id/panel_photo_incomplete"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/photo_button_height"
+                android:background="@drawable/bordered_btn_bg"
+                android:padding="@dimen/padding_16dp"
+                android:paddingLeft="@dimen/padding_12dp"
+                android:paddingRight="@dimen/padding_12dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/operation_sign_delivery_photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_15"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/icon_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/icon_completed"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/panel_photo_completed"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/photo_button_height"
+                android:background="@drawable/bordered_btn_bg"
+                android:paddingLeft="@dimen/padding_4dp"
+                android:paddingTop="@dimen/padding_4dp"
+                android:paddingRight="@dimen/padding_12dp"
+                android:paddingBottom="@dimen/padding_4dp">
+
+                <ImageView
+                    android:id="@+id/image_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:adjustViewBounds="true"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <TextView
+                    android:id="@+id/txt_remove_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="Remove Photo"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/font_size_15"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.5"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/panel_confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/screen_bg">
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:layout_marginRight="@dimen/padding_20dp"
+                android:background="@drawable/login_btn_bg"
+                android:stateListAnimator="@null"
+                android:text="@string/pickup_list_btn_confirm"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_15"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

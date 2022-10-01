@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <FrameLayout
+            android:id="@+id/panel_barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/barcode_scanner_panel_height"
+            android:background="@color/black">
+
+            <RelativeLayout
+                android:id="@+id/panel_preview_scan_on"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <com.pingu.driverapp.widget.camera.CameraSourcePreview
+                    android:id="@+id/camera_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.pingu.driverapp.widget.camera.GraphicOverlay
+                        android:id="@+id/camera_preview_graphic_overlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <FrameLayout
+                        android:id="@+id/static_overlay_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent">
+
+                        <ProgressBar
+                            android:id="@+id/search_progress_bar"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:indeterminate="true"
+                            android:indeterminateTint="@color/white"
+                            android:indeterminateTintMode="src_in"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/bottom_prompt_chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="28dp"
+                            android:background="@drawable/barcode_chip_bg"
+                            android:checkable="false"
+                            android:clickable="false"
+                            android:fontFamily="sans-serif"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:paddingTop="@dimen/padding_8dp"
+                            android:paddingRight="@dimen/padding_16dp"
+                            android:paddingBottom="@dimen/padding_8dp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_size_14"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                </com.pingu.driverapp.widget.camera.CameraSourcePreview>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/scan_on" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/panel_preview_scan_off"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_20dp"
+                    android:src="@mipmap/scan_off" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/panel_barcode_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/panel_barcode_scanner"
+            android:background="@color/white"
+            android:paddingTop="@dimen/padding_20dp"
+            android:paddingBottom="@dimen/padding_8dp"
+            android:weightSum="1.0">
+
+            <EditText
+                android:id="@+id/edit_txt_barcode_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                android:inputType="textCapCharacters"
+                android:layout_weight="0.7"
+                android:backgroundTint="@color/edit_text_underline"
+                android:hint="@string/operation_pickup_hint_parcel_id"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_17" />
+
+            <Button
+                android:id="@+id/btn_search_parcel"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/padding_20dp"
+                android:layout_marginRight="@dimen/padding_20dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/disabled_btn_bg"
+                android:text="@string/parcel_tracking_search"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_12"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/panel_barcode_input"
+            android:layout_marginTop="@dimen/padding_12dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/panel_parcel_tracking_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_ref_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_15dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_15"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/panel_data"
+                    android:layout_marginLeft="@dimen/padding_20dp"
+                    android:background="@color/separator_bg" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_15dp">
+
+                    <TextView
+                        android:id="@+id/txt_date_created_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date Created"
+                        android:textColor="@color/profile_version_info"
+                        android:textSize="@dimen/font_size_12"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/txt_created_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_size_14"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/panel_data"
+                    android:layout_marginLeft="@dimen/padding_20dp"
+                    android:background="@color/separator_bg" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_15dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_15dp">
+
+
+                    <TextView
+                        android:id="@+id/txt_status_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_15dp"
+                        android:text="Status"
+                        android:textColor="@color/profile_version_info"
+                        android:textSize="@dimen/font_size_12"
+                        android:textStyle="normal" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_parcel_track_time_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_status_title"
+                        android:clipToPadding="false"
+                        android:divider="@null"
+                        android:dividerHeight="0dp"
+                        tools:listitem="@layout/adapter_track_time_line_item" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

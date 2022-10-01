@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">#FFCC00</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="screen_bg">#F3F5FD</color>
+    <color name="separator_bg">#DADADA</color>
+    <color name="disabledBtn">#E4E6F2</color>
+    <color name="enabledBtnBlue">#007AFF</color>
+
+    <!-- Dashboard Home -->
+    <color name="pending_arrival_panel_bg">#F5E0CD</color>
+    <color name="blue_panel_bg">#E4E6F2</color>
+    <color name="yellow_panel_bg">#32FFCC00</color>
+    <color name="green_panel_bg">#3234C759</color>
+    <color name="red_panel_bg">#32FF3B30</color>
+
+    <!-- Profile -->
+    <color name="profile_logout_red">#FF3B30</color>
+    <color name="profile_version_info">#757575</color>
+
+    <!-- Hyperlink -->
+    <color name="hyperlink_text">#007AFF</color>
+
+    <!-- Dialog -->
+    <color name="dialog_error">#FF3B30</color>
+
+    <!-- Pickup List -->
+    <color name="tab_layout_bg">#EEEEF0</color>
+    <color name="tab_layout_separator_bg">#328E8E93</color>
+    <color name="proxy_sign_green">#34C759</color>
+    <color name="edit_text_underline">#AAAAAA</color>
+
+    <color name="notification_date">#959595</color>
+
+    <color name="transparent">#00000000</color>
+
+    <!-- Barcode scanning-->
+    <color name="barcode_reticle_background">#99000000</color>
+    <color name="barcode_reticle_stroke">#40000000</color>
+    <color name="reticle_ripple">#9AFFFFFF</color>
+    
+    <!-- Timeline -->
+    <color name="status_completed">#34C759</color>
+    <color name="status_incomplete">#959595</color>
+
+</resources>

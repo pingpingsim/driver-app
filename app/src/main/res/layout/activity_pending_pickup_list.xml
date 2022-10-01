@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/panel_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/padding_16dp"
+            android:paddingRight="@dimen/padding_16dp"
+            android:paddingBottom="@dimen/padding_16dp">
+
+            <EditText
+                android:id="@+id/edit_text_search_pending_pickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_input_border"
+                android:drawableLeft="@mipmap/icon_search"
+                android:drawableRight="@mipmap/icon_search_cancel"
+                android:drawablePadding="@dimen/padding_16dp"
+                android:hint="@string/hint_text_search"
+                android:padding="@dimen/padding_10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#757575"
+                android:textSize="@dimen/font_size_17" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/table_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/panel_search"
+            android:background="@color/screen_bg"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_12dp"
+            android:paddingBottom="@dimen/padding_12dp"
+            android:weightSum="1.0">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="#"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_13" />
+
+            <TextView
+                android:id="@+id/txt_total_sender_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:singleLine="true"
+                android:text="Sender Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_13" />
+
+            <TextView
+                android:id="@+id/txt_total_parcels"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                android:paddingRight="@dimen/padding_15dp"
+                android:singleLine="true"
+                android:text="0 Parcel(s)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_13" />
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/table_header">
+
+            <com.tylersuehr.esr.EmptyStateRecyclerView
+                android:id="@+id/recycler_view_pending_pickup_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                tools:listitem="@layout/adapter_pending_pickup_list_item" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</layout>

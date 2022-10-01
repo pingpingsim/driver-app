@@ -1,0 +1,149 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.pingu.driverapp"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.10"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../driverapp.jks")
+            storePassword "driverapp2020"
+            keyAlias "driverapp"
+            keyPassword "driverapp2020"
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'BASE_URL', '"https://ping-u.com.my/"'
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        staging {
+            buildConfigField 'String', 'BASE_URL', '"https://staging.ping-u.com.my/"'
+            signingConfig signingConfigs.release
+        }
+
+        demo {
+            buildConfigField 'String', 'BASE_URL', '"https://demo.ping-u.com.my/"'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            buildConfigField 'String', 'BASE_URL', '"https://demo.ping-u.com.my/"'
+        }
+    }
+
+    android.buildFeatures.dataBinding true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+project.ext {
+    materialVersion = "1.1.0-alpha05"
+    support = "1.0.0-alpha3"
+    constraintlayout = "2.0.0-alpha2"
+    arch = "2.0.0"
+    retrofit = "2.9.0"
+    constraintLayout = "1.0.2"
+    dagger_version = "2.21"
+    supportVersion = "28.0.0"
+    nav_version = "2.1.0"
+    room_version = "2.1.0"
+    work_version = "2.4.0"
+    camerax_version = "1.0.0-beta05"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.google.android.material:material:$project.materialVersion"
+    implementation "androidx.appcompat:appcompat:$project.support"
+    implementation "androidx.cardview:cardview:$project.support"
+    implementation "androidx.recyclerview:recyclerview:$project.support"
+    implementation "androidx.constraintlayout:constraintlayout:$project.constraintlayout"
+    implementation "androidx.legacy:legacy-support-v4:$project.support"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.11.0') {
+        exclude group: 'glide-parent'
+    }
+    // Arch
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$project.arch"
+    implementation "androidx.lifecycle:lifecycle-runtime:$project.arch"
+    implementation "androidx.lifecycle:lifecycle-extensions:$project.arch"
+    implementation "com.squareup.moshi:moshi:1.5.0"
+
+    // Nav Graph
+    implementation "androidx.navigation:navigation-fragment:$project.nav_version"
+    implementation "androidx.navigation:navigation-ui:$project.nav_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$project.retrofit"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$project.dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$project.dagger_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.dagger_version"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+
+    //RxJava2 and RxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Signature pad
+    implementation 'com.github.gcacace:signature-pad:1.2.1'
+
+    implementation 'com.ebanx:swipe-button:0.8.3'
+
+    // CameraX core library using camera2 implementation
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    // CameraX Lifecycle Library
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    // CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha12"
+
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha12"
+
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // MLKit Dependencies
+    implementation 'com.google.mlkit:barcode-scanning:16.0.3'
+
+    implementation 'com.github.tylersuehr7:empty-state-recyclerview:1.0.4'
+    implementation 'com.zxy.android:tiny:1.1.0'
+}

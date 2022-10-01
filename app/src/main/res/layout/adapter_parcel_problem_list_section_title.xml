@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="parcelProblem"
+            type="com.pingu.driverapp.data.model.ParcelProblem" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="@dimen/padding_14dp"
+        android:paddingTop="@dimen/padding_14dp"
+        android:paddingRight="@dimen/padding_14dp"
+        android:paddingBottom="@dimen/padding_5dp">
+
+        <TextView
+            android:id="@+id/txt_section_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@{parcelProblem.category}"
+            android:textColor="@color/profile_version_info"
+            android:textSize="@dimen/font_size_12" />
+
+    </RelativeLayout>
+</layout>

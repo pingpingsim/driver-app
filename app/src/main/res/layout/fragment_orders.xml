@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/screen_bg">
+
+                <!-- Today completed title row -->
+                <RelativeLayout
+                    android:id="@+id/panel_today_completed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_14dp">
+
+                    <TextView
+                        android:id="@+id/txt_title_today_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/orders_title_today_completed"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_size_17"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_title_today_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="10 Oct 2020"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_size_13"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <!-- Separator -->
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/panel_today_completed"
+                    android:layout_marginLeft="@dimen/padding_20dp"
+                    android:background="@color/separator_bg" />
+
+                <!-- Today pickup and delivery row -->
+                <LinearLayout
+                    android:id="@+id/pending_today_completed_row_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/separator2"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_12dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:weightSum="1.0">
+
+                    <RelativeLayout
+                        android:id="@+id/panel_today_pickup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/blue_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_today_pickup_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_today_pickup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_pickup" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_today_pickup"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_picked_up"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_today_pickup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_today_pickup_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="11dp"
+                        android:layout_height="1dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/panel_today_delivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/yellow_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_today_delivery_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_today_delivery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_delivery" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_today_delivery"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/home_delivery"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_today_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_today_delivery_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!-- Today signature and problematic parcel -->
+                <LinearLayout
+                    android:id="@+id/pending_today_completed_row_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pending_today_completed_row_1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_12dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_12dp"
+                    android:weightSum="1.0">
+
+                    <RelativeLayout
+                        android:id="@+id/panel_today_delivery_and_signature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/green_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_today_delivery_and_signature_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_today_delivery_and_signature"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_signature" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_today_delivery_and_signature"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_delivery_and_signature"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_today_delivery_and_signature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_today_delivery_and_signature_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="11dp"
+                        android:layout_height="1dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/panel_today_problematic_parcel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/red_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_today_problematic_parcel_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_today_problematic_parcel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_problematic_parcel" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_today_problematic_parcel"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_problematic_parcel"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_today_problematic_parcel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_today_problematic_parcel_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!-- History -->
+                <TextView
+                    android:id="@+id/txt_title_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pending_today_completed_row_2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_14dp"
+                    android:text="@string/orders_title_history"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_17"
+                    android:textStyle="bold" />
+
+                <!-- Separator -->
+                <View
+                    android:id="@+id/separator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/txt_title_history"
+                    android:layout_marginLeft="@dimen/padding_20dp"
+                    android:background="@color/separator_bg" />
+
+                <!-- History pickup and delivery row -->
+                <LinearLayout
+                    android:id="@+id/history_row_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/separator3"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_12dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:weightSum="1.0">
+
+                    <RelativeLayout
+                        android:id="@+id/panel_history_pickup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/blue_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_history_pickup_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_history_pickup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_pickup" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_history_pickup"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_picked_up"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_history_pickup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_history_pickup_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="11dp"
+                        android:layout_height="1dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/panel_history_delivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/yellow_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_history_delivery_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_history_delivery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_delivery" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_history_delivery"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/home_delivery"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_history_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_history_delivery_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!-- History signature and problematic parcel -->
+                <LinearLayout
+                    android:id="@+id/history_row_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/history_row_1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingTop="@dimen/padding_12dp"
+                    android:paddingRight="@dimen/padding_20dp"
+                    android:paddingBottom="@dimen/padding_12dp"
+                    android:weightSum="1.0">
+
+                    <RelativeLayout
+                        android:id="@+id/panel_history_delivery_and_signature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/green_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_history_delivery_and_signature_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_history_delivery_and_signature"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_signature" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_history_delivery_and_signature"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_delivery_and_signature"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_history_delivery_and_signature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_history_delivery_and_signature_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="11dp"
+                        android:layout_height="1dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/panel_history_problematic_parcel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/red_panel_bg"
+                        android:paddingLeft="@dimen/padding_12dp"
+                        android:paddingTop="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_12dp"
+                        android:paddingBottom="@dimen/padding_10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/panel_history_problematic_parcel_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/icon_history_problematic_parcel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/orders_problematic_parcel" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@+id/icon_history_problematic_parcel"
+                                android:paddingLeft="@dimen/padding_5dp"
+                                android:text="@string/orders_problematic_parcel"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_size_14"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_total_history_problematic_parcel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/panel_history_problematic_parcel_row"
+                            android:layout_marginTop="@dimen/padding_14dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/home_top_panel_title_font_size"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="announcementItem"
+            type="com.pingu.driverapp.data.model.Announcement" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.notification.NotificationAdapter.ClickHandlers" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:onClick="@{(view) -> handler.onItemSelected(view, announcementItem)}">
+
+        <TextView
+            android:id="@+id/txt_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_20dp"
+            android:layout_marginTop="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_20dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:text="@{announcementItem.description}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_12" />
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_msg"
+            android:layout_marginLeft="@dimen/padding_20dp"
+            android:layout_marginRight="@dimen/padding_20dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:text="@{announcementItem.messageHistory()}"
+            android:textColor="@color/profile_version_info"
+            android:textSize="@dimen/font_size_12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/txt_date"
+            android:background="@color/separator_bg" />
+
+    </RelativeLayout>
+</layout>

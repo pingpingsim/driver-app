@@ -1,0 +1,234 @@
+<resources>
+    <string name="app_name">Ping-U Driver</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- Toolbar -->
+    <string name="title_search">Search</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_side_menu_notification">Notification</string>
+    <string name="title_side_menu_filter">Filter</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Hi, %1$s</string>
+    <string name="home_today_tasks">Today\'s Task(s)</string>
+    <string name="home_pickup_list">Pickup List</string>
+    <string name="home_pickup_list_pls_select">Please select your task from pickup list</string>
+    <string name="home_pickup_available_address">Available Address</string>
+    <string name="home_my_tasks">My Task(s)</string>
+    <string name="home_pending_pickup">Pending Pickup</string>
+    <string name="home_pending_arrival_at_hub">Pending Arrival at Hub</string>
+    <string name="home_pending_pickup_address">Address</string>
+    <string name="home_pending_delivery">Pending Delivery</string>
+    <string name="home_pending_delivery_parcel">Parcel(s)</string>
+    <string name="home_pickup">Pickup</string>
+    <string name="home_delivery">Delivery</string>
+    <string name="home_delivery_and_signature">Delivery &amp; Signature</string>
+    <string name="home_problematic_parcel">Problematic Parcel</string>
+    <string name="home_choose_photo">Choose Parcel Photo</string>
+    <string name="home_photo_action_camera">Take Photo</string>
+    <string name="home_photo_action_gallery">Choose from Gallery</string>
+    <string name="home_photo_cancel">Cancel</string>
+
+    <!-- Login -->
+    <string name="login_username">User Name</string>
+    <string name="login_password">Password</string>
+    <string name="login_forgot_password">Forgot Password</string>
+    <string name="login_btn_label_login">Log In</string>
+    <string name="msg_error_username_empty">Please provide your username.</string>
+    <string name="msg_error_password_empty">Please provide your password.</string>
+    <string name="msg_error_username_password_empty">Please provide your username and password.</string>
+    <string name="login_user_auth_in_progress">Authenticating user...</string>
+    <string name="login_version_info">V %1$s</string>
+
+    <!-- Reset Password -->
+    <string name="reset_password_screen_title">Forgot Password</string>
+    <string name="reset_password_desc">Enter your email address below\nto reset password.</string>
+    <string name="reset_password_email">Email</string>
+    <string name="reset_password_send">Send</string>
+    <string name="reset_password_email_required">Email is mandatory</string>
+    <string name="reset_password_in_progress">Password reset in progress...</string>
+
+    <!-- Change Password -->
+    <string name="change_password_screen_title">Change Password</string>
+    <string name="change_password_current_password">Current Password</string>
+    <string name="change_password_new_password">New Password</string>
+    <string name="change_password_retype_new_password">Retype New Password</string>
+    <string name="change_password_update">Update</string>
+    <string name="change_password_new_password_confirmation_mismatch">Password confirmation is invalid</string>
+    <string name="change_password_in_progress">Saving password...</string>
+    <string name="change_password_success">Password successfully changed</string>
+
+    <!-- Profile -->
+    <string name="profile_menu_change_password">Change Password</string>
+    <string name="profile_menu_update_version">Update Version</string>
+    <string name="profile_menu_update_version_up_to_date">Your software is up to date</string>
+    <string name="profile_menu_update_data">Update Data</string>
+    <string name="profile_menu_update_data_last_sync">Last sync --</string>
+    <string name="profile_menu_logout">Logout</string>
+    <string name="profile_app_version_info">Ping-U Driver V %1$s</string>
+    <string name="profile_dialog_logout_title">Logout</string>
+    <string name="profile_dialog_logout_msg">Are you sure you want to logout?</string>
+
+    <!-- Search -->
+    <string name="search_tracking">Tracking</string>
+    <string name="search_guidebook">Guidebook</string>
+    <string name="hint_text_search">Search</string>
+
+    <!-- Orders -->
+    <string name="orders_title_today_completed">Today completed</string>
+    <string name="orders_title_history">History (3 days ago)</string>
+    <string name="orders_picked_up">Picked Up</string>
+    <string name="orders_delivery">Delivery</string>
+    <string name="orders_delivery_and_signature">Delivery &amp; Signature</string>
+    <string name="orders_problematic_parcel">Problematic Parcel</string>
+    <string name="orders_completed_proxy_sign">Proxy Sign</string>
+    <string name="orders_history_list">%1$s (History)</string>
+    <string name="orders_title_receiver_address">Receiver Address</string>
+    <string name="orders_title_parcel_id">Parcel ID</string>
+    <string name="orders_dialog_select_date">Select Date</string>
+
+    <!-- Pickup List -->
+    <string name="pickup_list_screen_title">Pickup List</string>
+    <string name="pickup_list_all_tasks">All Task(s)</string>
+    <string name="pickup_list_available">Available</string>
+    <string name="pickup_list_my_tasks">My Task(s)</string>
+    <string name="pickup_list_sender_address">Sender Address %1$s</string>
+    <string name="pickup_list_btn_confirm">Confirm</string>
+    <string name="pickup_list_pending_pickup">Pending Pickup</string>
+    <string name="pickup_list_picked_up_by">Pickup by</string>
+    <string name="pickup_list_progress_msg_accepting_task">Accepting task...</string>
+    <string name="pickup_list_progress_msg_cancelling_task">Cancelling task...</string>
+
+    <!-- Pending Pickup -->
+    <string name="pending_pickup_screen_title">@string/home_pending_pickup</string>
+    <string name="pending_pickup_column_no">#</string>
+    <string name="pending_pickup_column_sender_address">Sender Address %1$d</string>
+    <string name="pending_pickup_column_parcels">%1$d Parcel(s)</string>
+    <string name="pending_pickup_select_pickup_problem_dialog_title">Select Pickup Problem</string>
+    <string name="pending_pickup_select_pickup_problem_opt_cancel">CANCEL</string>
+    <string name="pending_pickup_select_pickup_problem_opt_submit">SUBMIT</string>
+    <string name="pending_pickup_problem_unable_contact">Unable to contact Sender</string>
+    <string name="pending_pickup_problem_rescheduled">Sender rescheduled</string>
+    <string name="pending_pickup_problem_no_refund">Sender request to cancel order (no refund)</string>
+    <string name="pending_pickup_problem_parcel_not_ready">Parcel is not ready</string>
+    <string name="pending_pickup_problem">Pickup Problem</string>
+    <string name="pending_pickup_problem_pls_select_one">Please select one pickup problem to proceed.</string>
+    <string name="pending_pickup_progress_msg_report_pickup_problem">Reporting pickup problem...</string>
+    <string name="pending_pickup_problematic_parcel_submission_success">Pickup problem has been submitted.</string>
+    <string name="pending_pickup_problematic_parcel_submission_failure">Pickup problem submission failure.</string>
+
+    <!-- Pending Arrival at Hub -->
+    <string name="pending_arrival_screen_title">Pending Arrival</string>
+
+    <!-- Pending Delivery -->
+    <string name="pending_delivery_screen_title">@string/home_pending_delivery</string>
+    <string name="pending_delivery_column_no">#</string>
+    <string name="pending_delivery_column_receiver_address">Receiver Address</string>
+    <string name="pending_delivery_column_parcels">%1$s Parcel(s)</string>
+
+    <string-array name="pickup_list_menu_titles">
+        <item>@string/pickup_list_all_tasks</item>
+        <item>@string/pickup_list_available</item>
+        <item>@string/pickup_list_my_tasks</item>
+    </string-array>
+
+    <!-- Operation Pickup -->
+    <string name="err_camera__permission_not_granted">Camera permission is needed.</string>
+    <string name="operation_pickup_hint_parcel_id">Parcel ID</string>
+    <string name="operation_pickup_add">Add</string>
+    <string name="operation_pickup_duplicate_parcel_id">Duplicate Parcel ID %1$s</string>
+
+    <!-- Operation Scan Parcel ID -->
+    <string name="scan_parcel_id_screen_title">Scan Parcel ID</string>
+
+    <!-- Operation Signature & Delivery -->
+    <string name="operation_scan_delivery_hint_receiver">Receiver</string>
+    <string name="operation_sign_delivery_hint_nric">NRIC</string>
+    <string name="operation_sign_delivery_hint_parcel_id">Parcel ID</string>
+    <string name="operation_sign_delivery_photo">Photo</string>
+    <string name="operation_sign_delivery_signature">Signature</string>
+    <string name="operation_sign_delivery_signature_delivery_completed">Delivery Completed</string>
+    <string name="operation_sign_delivery_signature_proxy_sign">Proxy Sign</string>
+    <string name="operation_digital_signature_screen_title">Signature</string>
+    <string name="operation_digital_signature_reset">Reset</string>
+    <string name="operation_digital_signature_pls_sign">Please Sign in The Blank Space</string>
+    <string name="operation_digital_signature_save">SAVE</string>
+    <string name="operation_digital_signature_validation_failure">Signature must be provided before saving.</string>
+    <string name="operation_pickup_process_request">Processing request...</string>
+    <string name="operation_pickup_success">Pickup success</string>
+    <string name="operation_out_for_delivery">Parcel is now in transit</string>
+    <string name="operation_accept_task_success">Task successfully accepted.</string>
+    <string name="operation_accept_task_failure">One or more parcel is not allowed for pickup.</string>
+    <string name="operation_remove_task_success">Task successfully cancelled.</string>
+    <string name="operation_remove_task_failure">One or more parcel is not allowed for cancel.</string>
+    <string name="operation_validation_parcel_id">Parcel ID is must be provided.</string>
+    <string name="operation_validation_recipient_ic">Recipient IC must be provided.</string>
+    <string name="operation_validation_recipient_name">Recipient name must be provided</string>
+    <string name="operation_validation_parcel_photo">Parcel photo must be provided</string>
+    <string name="operation_validation_parcel_signature">Parcel signature must be provided</string>
+    <string name="operation_validation_parcel_at_least_one">Please provide at least one parcel ID to proceed.</string>
+    <string name="operation_validation_task_at_least_one">Please select one sender address to proceed.</string>
+    <string name="operation_validation_parcel_problem">Parcel problem must be provided.</string>
+
+    <!-- Problematic Parcels -->
+    <string name="operation_problematic_type">Problematic Type</string>
+    <string name="operation_problematic_parcel_submitted">Problematic parcel details has been submitted</string>
+
+    <!-- Delivery Details -->
+    <string name="delivery_details_screen_title">Delivery Details</string>
+    <string name="delivery_details_address">Address</string>
+    <string name="delivery_details_receiver_name">Receiver Name</string>
+    <string name="delivery_details_mobile_number">Mobile Number</string>
+    <string name="delivery_details_problematic">PROBLEMATIC</string>
+    <string name="delivery_details_slide_to_sign">SLIDE TO SIGN</string>
+
+    <!-- Parcel Tracking -->
+    <string name="parcel_tracking_screen_title">Tracking</string>
+    <string name="parcel_tracking_search">SEARCH</string>
+
+    <!-- Notification -->
+    <string name="notification_mark_all_as_read">Mark all as read</string>
+
+    <!-- Error -->
+    <string name="error_server">Server error encountered</string>
+    <string name="error_no_internet">No Internet Connection</string>
+    <string name="error_unexpected">An unexpected error has occurred</string>
+
+    <!-- Barcode scanning-->
+    <string name="pref_key_barcode_reticle_width" translatable="false">barcode_brw</string>
+    <string name="pref_key_barcode_reticle_height" translatable="false">barcode_brh</string>
+    <string name="pref_key_delay_loading_barcode_result" translatable="false">barcode_dlbr</string>
+    <string name="prompt_point_at_a_barcode">Point your camera at a barcode</string>
+    <string name="prompt_move_camera_closer">Move closer to search</string>
+    <string name="prompt_searching">Reading&#8230;</string>
+    <string name="pref_key_enable_auto_search" translatable="false">pkeas</string>
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
+    <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
+
+    <string name="whatsAppMsgPendingPickup">Hi, Ping-U here. We are on the way to pickup your parcels. Please make sure the parcels are well packed and attached with Consignment Note. Thank you for using Ping-U service.</string>
+    <string name="whatsAppMsgOutForDelivery">Hi, Ping-U here. Your parcel is currently out for delivery. Please trace and track your parcel using the link below:\n https://ping-u.com.my/web/parcel-detail?parcel_id=%1$s</string>
+    <string name="whatsAppMsgCompleted">Hi, Ping-U here. Your parcel delivery is completed. Please trace and track your parcel using the link below:\n https://ping-u.com.my/web/parcel-detail?parcel_id=%1$s</string>
+    <string name="msg_list_empty">No record(s) found</string>
+
+    <!-- Parcel Problem -->
+    <string name="parcel_normal_problem">Normal Problem</string>
+    <string name="parcel_delivery_problem">Delivery Problem</string>
+    <string name="parcel_pickup_problem">Pickup Problem</string>
+
+    <string name="validation_incorrect_parcel_id_format">Incorrect parcel ID format.</string>
+
+    <!-- GPS -->
+    <string name="gps_app_choose">Select Navigation App</string>
+    <string name="gps_google_map">Google Map</string>
+    <string name="gps_waze">Waze</string>
+    <string name="gps_google_map_not_installed">Google Map is not installed</string>
+    <string name="gps_waze_not_installed">Waze is not installed</string>
+    <string name="gps_address_not_recognised">Address is not recognized</string>
+    <string name="gps_open_navigation_failed">Failed to open map</string>
+
+</resources>

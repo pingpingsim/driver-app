@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="totalItemCount"
+            type="int" />
+
+        <variable
+            name="status"
+            type="com.pingu.driverapp.data.model.Status" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.search.tracking.TrackTimeLineAdapter.ClickHandlers" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/panel_time_line_left"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/panel_time_line_right"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <View
+                android:id="@+id/view_time_line_circle"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerHorizontal="true"
+                android:background="@{(index == 0) ? @drawable/time_line_circle_complete : @drawable/time_line_circle_incomplete}" />
+
+
+            <View
+                android:id="@+id/view_time_line_vertical_line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_time_line_circle"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/time_line_dotted_vertical_line"
+                android:visibility="@{((index+1) == totalItemCount) ? View.GONE : View.VISIBLE}"></View>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/panel_time_line_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:paddingLeft="@dimen/padding_10dp"
+            android:paddingBottom="@dimen/padding_12dp"
+            app:layout_constraintLeft_toRightOf="@+id/panel_time_line_left"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/txt_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_5dp"
+                android:text="@{status.statusName}"
+                android:textColor="@{(index == 0) ? @color/black : @color/profile_version_info}"
+                android:textSize="@dimen/font_size_12"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_status"
+                android:text="@{status.statusDate}"
+                android:textColor="@{(index == 0) ? @color/black : @color/profile_version_info}"
+                android:textSize="@dimen/font_size_12"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

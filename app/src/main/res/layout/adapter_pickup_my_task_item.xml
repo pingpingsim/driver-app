@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="task"
+            type="com.pingu.driverapp.data.model.Task" />
+
+        <variable
+            name="handler"
+            type="com.pingu.driverapp.ui.home.task.my_tasks.PickupMyTaskAdapter.ClickHandlers" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/panel_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.15"
+                android:gravity="center_horizontal|top"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingBottom="@dimen/padding_15dp"
+                android:text="@{String.valueOf(index)}"
+                android:textColor="@color/profile_version_info"
+                android:textSize="@dimen/font_size_12" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:paddingTop="@dimen/padding_15dp"
+                android:paddingRight="@dimen/padding_15dp"
+                android:paddingBottom="@dimen/padding_15dp">
+
+                <TextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_5dp"
+                    android:text="@{task.address}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16" />
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_address"
+                    android:layout_marginBottom="@dimen/padding_5dp"
+                    android:text="@{task.name}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16" />
+
+                <TextView
+                    android:id="@+id/txt_contact_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_name"
+                    android:layout_alignParentLeft="true"
+                    android:text="@{task.contactNumber}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_16" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:onClick="@{(view) -> handler.onRemoveTask(view, task)}"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="@dimen/padding_15dp"
+                    android:paddingRight="@dimen/padding_15dp"
+                    android:paddingTop="@dimen/padding_16dp"
+                    android:paddingBottom="@dimen/padding_15dp"
+                    android:src="@mipmap/cancel" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/padding_20dp"
+            android:layout_below="@+id/panel_data"
+            android:background="@color/separator_bg" />
+
+    </RelativeLayout>
+</layout>
